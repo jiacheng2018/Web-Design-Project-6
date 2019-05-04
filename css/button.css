@@ -1,0 +1,122 @@
+#sub_bar{
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #151719;
+    left: -200px;
+}
+#sub_bar.active{
+    left: 0px;
+}
+#sub_bar ul li{
+    color: rgba(230,230,230,.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom:1px solid rgba(100,100,100,0.3);  
+}
+#sub_bar .tar-btn{
+    position: absolute;
+    left: 210px;
+    top: 20px;
+}
+#sub_bar .tar-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: #151719;
+    margin: 5px 0px;
+    z-index: 2;
+}
+
+.button_container{
+            width: 100px;
+            margin: 0 auto;
+            margin-top: 2px;
+    padding-top: 2px;
+}
+
+.button_su{
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.su_button_circle{
+ /* background-color: red;*/
+  border-radius: 1000px;
+  position: absolute;
+  left:0;
+  top:0;
+  width: 0px;
+  height: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  pointer-events: none;
+}
+
+.button_su_inner{
+    display: inline-block;
+    background: #428bca;
+    color: #F4F4F4;
+    font-size: 16px;
+    font-weight: normal;
+    width: 132px;
+    text-align: center;
+    border-radius: 3px;
+    transition: 400ms;
+    text-decoration: none;
+    padding: 10px;
+    z-index: 100000;
+}
+
+.button_text_container{
+   position:relative;
+   z-index: 10000;
+}
+
+.explode-circle {
+   animation: explode 0.5s forwards;
+
+}
+
+.desplode-circle{
+   animation: desplode 0.5s forwards;
+}
+
+@keyframes explode {
+  0% {
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgba(42, 53, 80,0.2);
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: rgba(20, 180, 87,0.8);
+  }
+}
+
+@keyframes desplode {
+  0% {
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: rgba(20, 180, 87,0.8);
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgba(129, 80, 108,0.6);
+  }
+}

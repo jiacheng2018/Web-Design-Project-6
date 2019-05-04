@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Exploring Trip</title>
+</head>
+  <link rel="stylesheet" href="css/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <script src="js/jquery_2.1.1.js"></script>
+  <script src="css/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/roll.css">
+<link rel="stylesheet" href="css/button.css">
+
+<body>
+
+<!-- This is navbar -->
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <span>
+              <img src="img/icon.jpg" style="width: 30px; height: 30px;" alt="">
+          </span>
+          ILanguage
+        </a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Homepage.html">Home</a></li>
+          <li><a href="Gallery.html">Royal Gallery</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Exploring Trip
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="China_trip1.html">China</a></li>
+              <li><a href="Japan_trip.html">Japan</a></li>
+              <li><a href="Korea_trip.html">Korea</a></li>
+            </ul>
+          </li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <div class="form-group input-group">
+            <input type="text" placeholder="search Here" class="form-control">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default">
+               <span class="glyphicon glyphicon-search"></span>
+             </button>
+           </div>
+
+         </div>
+       </form>
+     </div>
+   </div>
+ </nav>
+
+<!-- This is side bar -->
+
+<div id="sub_bar">
+   <div class="tar-btn" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+   </div>
+   <ul>
+    <li style="margin-top: 5px;padding-top: 5px; font-size:25px; ">
+          Episode List
+    </li>
+    <li>
+      <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="China_trip1.html" class="button_su_inner">
+          <span class="button_text_container">
+           Episode One
+          </span>
+        </a>
+      </div>
+   </div>
+    </li>
+    <li>
+       <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="China_trip2.html" class="button_su_inner">
+          <span class="button_text_container">
+           Episode Two
+          </span>
+        </a>
+      </div>
+   </div>
+    </li>
+    <li>
+      <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="China_trip3.html" class="button_su_inner">
+          <span class="button_text_container">
+            Episode Three
+          </span>
+        </a>
+      </div>
+   </div>
+    </li>
+   </ul>
+</div>
+
+
+
+
+
+<div class="qu_board">
+ <img class="qu_pic" src="img/Forests.png" alt="ladies_picture">
+  <p class="qu_one"> Scene: You and Xiaoxiao Tong start your exploring trip. Rember finding the medicine for Snow White is the priority of your trip. You and Xiaoxiao Tong encounter a forest. Xiaoxiao Tong stare at you</p>
+  <p class="qu_lang"> "我们需要前进吗"</p>
+</div>
+
+
+
+ <div class='selector'>
+  <ul>
+    <li>
+      <input id='1' type='checkbox'>
+      <label for='1'>前进</label>
+    </li>
+    <li>
+      <input id='2' type='checkbox'>
+      <label for='2'>我也不知道</label>
+    </li>
+    <li>
+      <input id='3' type='checkbox'>
+      <label for='3'>不理她</label>
+    </li>
+    <li>
+      <input id='4' type='checkbox'>
+      <label for='4'>向后跑</label>
+    </li>
+  </ul>
+  <button>Answer</button>
+</div>
+<script src="js/button_effects.js"></script>
+<script  src="js/roll.js"></script>
+</body>
+
+</html>

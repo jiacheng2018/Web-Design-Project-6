@@ -1,0 +1,154 @@
+*{
+    margin:0;
+}
+body{
+	background-color: white;
+}
+.book{
+    max-width:900px;
+    margin:80px auto;
+    margin-left: 250px;
+}
+.sub_title{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.book ul{
+    border: 10px solid #428bca;
+    padding-top:30px;
+    padding-bottom:30px;
+    padding-right:30px;
+    padding-left:30px;
+    text-align:center;
+}
+.book li{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    list-style:none;
+    margin: 5px;
+    display: inline-block;
+    perspective: 300px;
+  }
+  .picBox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -90px;
+    animation: 200ms ease-out 0ms 1 normal forwards;
+  }
+
+.front_side,
+.flip_side{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+.flip_side{
+    color:#fff;
+    background-color:green;
+    text-align:center;
+    line-height:180px;
+    transform: translate3d(0,0,-1px);
+    /* 3D空间内移动一个元素的位置 */
+}
+
+.in-top .flip_side,
+.out-top .flip_side
+ {
+    transform-origin: 0% 100%;
+    transform: translate3d(0, -100%, 0) rotate3d(1,0,0,90deg);
+}
+.in-top .picBox{
+    animation-name: in-top;
+    animation-play-state: running;
+}
+.out-top .picBox{
+    animation-name: out-top;
+    animation-play-state: running;
+}
+@keyframes in-top {
+    from  {transform: rotate3d(0,0,0,0deg)}
+    to    {transform: rotate3d(-1,0,0,90deg)}
+} 
+
+@keyframes out-top {
+    from {transform: rotate3d(-1,0,0,90deg)}
+    to   {transform: rotate3d(0,0,0,0deg)}
+}
+.in-right .flip_side,
+.out-right .flip_side {
+          transform-origin: 0% 0%;
+          transform: translate3d(100%, 0, 0) rotate3d(0,1,0,90deg);
+}
+.in-right .picBox{
+    animation-name: in-right;
+    animation-play-state: running;
+}
+.out-right .picBox{
+    animation-name: out-right;
+    animation-play-state: running;
+}
+@keyframes in-right {
+    from  {transform: rotate3d(0,0,0,0deg)}
+    to    {transform: rotate3d(0,-1,0,90deg)}
+}
+
+@keyframes out-right {
+    from  {transform: rotate3d(0,-1,0,90deg)}
+    to    {transform: rotate3d(0,0,0,0deg)}
+}
+
+.in-bottom .flip_side,
+.out-bottom .flip_side {
+          transform-origin: 0% 0%;
+          transform: translate3d(0, 100%, 0) rotate3d(-1,0,0,90deg);
+}
+.in-bottom .picBox{
+    animation-name: in-bottom;
+    animation-play-state: running;
+}
+.out-bottom .picBox{
+    animation-name: out-bottom;
+    animation-play-state: running;
+}
+@keyframes in-bottom {
+    from  {transform: rotate3d(0,0,0,0deg)}
+    to    {transform: rotate3d(1,0,0,90deg)}
+}
+@keyframes out-bottom {
+    from  {transform: rotate3d(1,0,0,90deg)}
+    to    {transform: rotate3d(0,0,0,0deg)}
+}
+.in-left .flip_side,
+.out-left .flip_side{
+          transform-origin: 100% 0;
+          transform: translate3d(-100%,0,0) rotate3d(0,-1,0,90deg);
+}
+@keyframes in-left {
+    from  {transform: rotate3d(0,0,0,0deg)}
+    to    {transform: rotate3d(0,1,0,90deg)}
+}
+@keyframes out-left {
+    from  {transform: rotate3d(0,1,0,90deg)}
+    to    {transform: rotate3d(0,0,0,0deg)}
+}
+.in-left .picBox{
+          animation-name: in-left;
+          animation-play-state: running;
+}
+.out-left .picBox{
+          animation-name: out-left;
+          animation-play-state: running;
+}
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+}
+.navbar-default{
+	margin: 0px;
+}
+.navbar .navbar-nav li a:hover{
+	background: #fbfbfb;
+	border-radius:10px; 
+}
+.overlay {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+.overlay.main {
+    background: #43A047;
+    opacity: .9;
+}
+.overlay.dark {
+    background: #000;
+    opacity: .2;
+}
+.overlay.white {
+    background: #fff;
+    opacity: .4;
+}
+.overlay.brand {
+    background: #2A3B55;
+    opacity: .4;
+}
+.jumbotron{
+  background-image: url(); 
+}
+.banner2 {
+    background-size: auto auto;
+    background-size: cover;
+    position: relative;
+    background: url("../img/pic111.png") no-repeat fixed 50% 50%;
+}
+.banner-info {
+    text-align: center;
+    padding: 120px 0px;
+}
+.banner-info h6 {
+    color: #FFFFFF;
+    font-size: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 7px;
+}
+.banner-info h3 {
+    color: #FFFFFF;
+    font-size: 5em;
+    margin: 0;
+    font-weight: 900;
+}
+.banner-info p {
+    color: #FFFFFF;
+    font-size: .9em;
+    margin: 1em auto 0;
+    line-height: 1.8em;
+    width: 43%;
+    margin-bottom: 30px;
+}
+.innermao{
+  background: yellow;
+  width: 500px;
+  height: 500px;
+}
+/*--slider--*/

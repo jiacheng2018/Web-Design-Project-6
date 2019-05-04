@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>jQuery跟CSS3悬停悬停翻转特效 - A5源码</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/demo.css">
+    <style>
+    	.button_container{
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+.button_su{
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.su_button_circle{
+ /* background-color: red;*/
+  border-radius: 1000px;
+  position: absolute;
+  left:0;
+  top:0;
+  width: 0px;
+  height: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  pointer-events: none;
+}
+
+.button_su_inner{
+    display: inline-block;
+    background: #F8B627;
+    color: #F4F4F4;
+    font-size: 16px;
+    font-weight: normal;
+    width: 132px;
+    text-align: center;
+    border-radius: 3px;
+    transition: 400ms;
+    text-decoration: none;
+    padding: 10px;
+    z-index: 100000;
+}
+
+.button_text_container{
+   position:relative;
+   z-index: 10000;
+}
+
+.explode-circle {
+   animation: explode 0.5s forwards;
+
+}
+
+.desplode-circle{
+   animation: desplode 0.5s forwards;
+}
+
+@keyframes explode {
+  0% {
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgba(42, 53, 80,0.2);
+  }
+  100% {
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: rgba(20, 180, 87,0.8);
+  }
+}
+
+@keyframes desplode {
+  0% {
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: rgba(20, 180, 87,0.8);
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgba(129, 80, 108,0.6);
+  }
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">菜鸟教程</a>
+	</div>
+	<div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Royal Gallery</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					Exploring Trip
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">China</a></li>
+					<li><a href="#">Japan</a></li>
+					<li><a href="#">Korea</a></li>
+				</ul>
+			</li>
+		</ul>
+		<form class="navbar-form navbar-right">
+			<div class="form-group input-group">
+				<input type="text" placeholder="search Here" class="form-control">
+                 <div class="input-group-btn">
+                 	  <button type="button" class="btn btn-default">
+                 	       <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                 </div>
+			</div>
+		</form>
+	</div>
+	</div>
+</nav>
+<div id="sub_bar">
+   <div class="tar-btn" onclick="toggleSidebar()">
+   	    <span></span>
+   	    <span></span>
+   	    <span></span>
+   </div>
+   <ul>
+   	<li style="margin-top: 5px;padding-top: 5px; font-size:25px; ">
+           Author List
+    </li>
+   	<li>
+      <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="#" class="button_su_inner">
+          <span class="button_text_container">
+            Jack
+          </span>
+        </a>
+      </div>
+   </div>
+   	</li>
+   	<li>
+   		 <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="#" class="button_su_inner">
+          <span class="button_text_container">
+            Mike
+          </span>
+        </a>
+      </div>
+   </div>
+   	</li>
+   	<li>
+   		 <div class="button_container">
+      <div class="button_su">
+        <span class="su_button_circle"></span>
+        <a href="#" class="button_su_inner">
+          <span class="button_text_container">
+            Jason
+          </span>
+        </a>
+      </div>
+   </div>
+   	</li>
+   </ul>
+</div>
+<canvas id="canvas" style="position: absolute; z-index: -1;">
+</canvas>
+<div class="book">
+	<ul>
+		<div class="sub_title"> book collection </div>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic1.png'></image>
+				</div>
+				<div class='flip_side'>
+					<a href="#" class="big-link" data-reveal-id="myModal" data-animation="fade">
+                       jquery2
+                    </a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic2.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+					  Picture2
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic3.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+					   Picture3
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic4.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture4
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic2-1.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture5
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic2-2.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture6
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic2-3.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture7
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic2-4.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+					   Picture8
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic3-1.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture9
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic3-2.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture10
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic3-3.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture11
+					</h3>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class='picBox'>
+				<div class='front_side'>
+					<image height='180px' width='180px' src='img/pic3-4.png'></image>
+				</div>
+				<div class='flip_side'>
+					<h3>
+						Picture12
+					</h3>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div id="myModal" class="modal" style="width:500px; height: 500px; background: green;">
+   <div class="popup_content">
+   	    <h1>Warning</h1>
+   	    <p>Your are preceding to Page reading</p>
+        <a href="index.html">ok</a>
+        <a class="close-reveal-modal">&#215;</a>
+   </div>
+</div>
+<script src="js/demo.js"></script>
+<script src="js/PopUp.js"></script>
+<script src="js/snowFlake.js"></script>
+<script src="js/button_effects.js"></script>
+</body>
+</html>
