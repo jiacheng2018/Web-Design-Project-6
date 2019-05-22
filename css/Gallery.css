@@ -5,12 +5,15 @@ body{
 	background-color: white;
 }
 .book{
-    max-width:900px;
+    max-width:1200px;
     margin:80px auto;
     margin-left: 250px;
+    position: relative;
+    /*background: red;*/
 }
 .sub_title{
     font-size: 50px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .book ul{
@@ -26,7 +29,7 @@ body{
     width: 180px;
     height: 180px;
     list-style:none;
-    margin: 5px;
+    margin: 10px;
     display: inline-block;
     perspective: 300px;
   }
@@ -146,8 +149,15 @@ body{
           animation-name: out-left;
           animation-play-state: running;
 }
-
-
+#img11{
+    position: absolute; 
+    margin: auto;
+    top: 0px;
+}
+#img11>img{
+    width: 70px; 
+    height: 70px;
+}
 
 
 

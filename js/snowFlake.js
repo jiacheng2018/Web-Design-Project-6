@@ -6,7 +6,7 @@
         canvas.width=width;
         canvas.height=height;
  
-        cartoon();          //run cartoon function
+        // cartoon();          //run cartoon function
           class Snowflake{
             constructor(){
                 this.init();//Initialize the function 
